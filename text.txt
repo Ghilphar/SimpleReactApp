@@ -1,0 +1,245 @@
+In the beginning. It was an empty folder.
+
+We just pnpm init the repo.
+On this moment a simple package.json file appears. 
+
+This text file was writed with some weirds inscriptions.
+First thing i saw is all the text i could see was encapsulated.
+Embrassed by 2 curly brackets.
+
+What this mean ? I don't know.
+But for the moment let's accept it.
+Let's face what i understand.
+
+It looks like the words are embrassed by " ", i don't get it but it is was it
+is.
+Let's go in.
+
+There is a word named "name" then a ':' and after that there is a
+"my-simple-react-app" the line ends by a comma,
+
+Well my folder where i init the repo is named "my-simple-react-app"
+This must be the name of my project.
+
+Then i see a version with the same ':' and then "1.0.0" This must be the
+version of my app.
+
+Well you may have understood now, the the words are connected between them
+with a :, the "name" is my-simple-react-app
+the "version" is "1.0.0"
+
+And so go on
+
+A description that is empty.
+There is a main named index.js
+"scripts" with a gain curly brackets.I still don't know why. But let's move
+on.
+
+keywords entry goes with a [] that's new.
+
+author empy
+and liscense ISC.
+
+Let's see if we have a gile index.js
+
+
+
+
+We send do another command:
+
+"pnpm add react react-dom"
+---
+Other things happens we now have a key dependencies on our "package.json"
+Theses dependencies are again on curly brackets
+but this time there is 2 values that are react and react-dom
+
+theses must be the dependencies we installed. ad the curly brackets mut be to
+assign to the key "dependencies" multiples parties "react" and "react-dom"
+
+Also now on the project we have a new folder.
+It's named "node_nmodules"
+
+Inside there is other folders. react and react-dom.
+
+Theses folder are organised like mine.
+with a package.json.
+
+The package.json of react points to the github of facebook.
+
+--- 
+
+Let's move on.
+
+The explanation tells me i should install some minimal setup before moving on.
+
+I should install webpack webpack-cli webpack-dev-server @babel/core @
+babel/present-env @babel-preset-react babel-loader html-webpack-plugin
+
+pnpm add -D 
+
+however i don't know theses packages, i don't know why they are used for.
+Let's move on.
+
+--
+Babel libraries are suppose to transpile modern JavaScript and JSX. I don't
+understand what this means.
+i should create a ./babelrc
+with 
+
+{
+	"presets": ["@babel/preset-env", "@babel/preset-react"]
+}
+
+I don't know what this is. Let's move on.
+
+Let's move on 
+
+--- 
+I shouls also configure webpack:
+
+it gives a config also.
+For the moment i don't know what this is for.
+I should create a webpack.config.js
+
+
+--- Let's move on
+
+Well then i should create a basic react component on the file.
+src/index.js 
+
+i remember this file was my main on the package.json also i saw this file on
+the node_module folder of react. Do you remember the folder that appear when
+we installed react.
+
+Inside this folder there is a README that display a file that looks like the
+one we should put on index.js
+
+
+---
+Then it tells me i should create a public folder with 
+a public/index.html
+
+The reason we need to create the public/index.html.
+
+Is because this file is our app.
+We are building a single page application. The single page application comes
+from fact we are only serving this index.html page.
+Then we will modify this div named id=root using react.
+
+This is how our application will run with the "DOM"
+
+---
+
+Then we need to create on the src folder the index.js file
+This is wheere we are going to interact with the app.
+As we are aiming into using best practices we are using the createRoot 
+
+This comes from the new api integrated in React 18
+
+---
+
+Looks like for run our app we will be forced to use Babel and Webpacks or
+equivalents.
+For this purpose we will see what they do.
+
+First Babel:
+Babel is used to Transpilling Modern JavaScript:
+Babel converts modern JavaScript (ES6/ES2015+ and beyond) into code that can
+run in older browsers or environments that don't support the latest language
+features.
+For example features like arrow functions, classes, async/await, and more are
+transformed into older syntax.
+
+JSX Transformation:
+When using libraries like React, you write components in JSX.
+JSX is a syntax that looks like HTML within JavaScript. Babel transform JSX
+into standard javascript calls (using React.createElement or similar) that
+browsers can execute.
+
+Pollyfilling New Apis:
+While Babel itself is focused on syntax tranformations, it is often used
+alongside polyfill libraries like (core-js) to provide implementations of new 
+JavaScript features (like Promises or Array.prototype.includes) in
+environments that do not support them natively.
+
+For resume Babels solves some core problems:
+- Browser Compatibility:
+As Javascript evolves, not all browsers update at the same pace.
+Babel ensures that you can write code using the latest features without
+breaking compatibility with older browsers.
+
+- Developer Productivity:
+By allowing developers to use moders syntax and features (which are often more
+concise and easier to reason about), Babel improves developer productivity.
+The transformation happens behind the scenes, so you can focus on writing
+modern code.
+
+- Framework Ecosystem
+Frameworks like React benefit greatly from Babel because it lets developers
+use JSX, which makes component definitions more intuitive.
+
+There is differents competitors to BABEL:
+- SWC Rust-Based compiler aims to be faster.
+it looks like babel is letting place to swc
+"https://blog.logrocket.com/why-you-should-use-swc/" 
+
+We will focus on using SWC as it is used on next.js 
+
+
+What's Webpack
+
+Module bundling:
+Webpack takes your application's various modules. (js, files, css, images,
+etc..) And bundles them together into one or more output files. This is
+specially important for web applications where browsers need to load a limited
+number of files for performance reasons.
+
+Dependency management:
+Webpack builds a dependency graph from your entry point(s) and includes every
+module your application depends on. This ensures that all necessary code is
+available  in the final bundle.
+
+Asset Management:
+Webpack, isn't limited to js, it can process and bundle stylesheets (CSS,
+SASS, images, fonts, and even HTML files, using loaders to transform these
+resources as needed.
+
+Optimizations:
+Features like code splitting (dividing code into chunks that can be loaded on
+demand), tree shaking (removing unused code), and minification (reducing file
+sizes) help optimize the final output for performance.
+
+Development Server:
+Webpack Dev Server provides a local server with hot module replacement (HMR)
+so that changes to your code automatically update in the browser without a
+full reload.
+
+
+The problem WebPack solves:
+
+Performance: 
+By bundling your code, Webpack reduces the number of HTTP requests and can
+optimize the size of the assets delivered to the client, which is crucial for
+performance, especially on mobile devices.
+
+Modularity:
+Modern Javascript development embraces modularity modularity. Webpack enables
+you to write modular code and then compiles it into a format that works
+efficiently in the browser.
+
+
+Complex Assets:
+Modern Javascript include various types of assets. Webpack privides a unified
+way to process these assets with loaders and plugins, streamlining the build
+process.
+
+
+----
+
+So we configure .swcrc
+We tell him to parse javascript with jsx enabled
+
+We set the react transform to use the automatic runtime. Recommended for react
+17+
+
+
