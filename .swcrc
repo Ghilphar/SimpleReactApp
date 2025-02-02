@@ -1,13 +1,15 @@
 {
-	"jsc": {
-		"parser": {
-			"syntax": "ecmascript",// "typescript"
-			"jsx": true
-		},
-		"transform": {
-			"react": {
-				"runtime": "automatic"
-			}
-		}
-	}
+  "jsc": {
+    "parser": {
+      "syntax": "ecmascript",
+      "jsx": true
+    },
+    "transform": {
+      "react": {
+        "runtime": "automatic",
+        "importSource": "react"
+      }
+    }
+  }
 }
+

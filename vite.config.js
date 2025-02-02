@@ -1,8 +1,7 @@
 import { defineConfig } from 'vite';
-import swc from 'vite-plugin-swc';
+import react from '@vitejs/plugin-react-swc';
 
 export default defineConfig({
-	plugins: [
-		//The swc() will automatically read our .swcrc config	
-	],
+  plugins: [react()]
 });
+
