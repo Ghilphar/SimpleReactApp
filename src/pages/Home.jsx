@@ -16,7 +16,7 @@ const Home = () => {
       {/* Fade-in Section: Hero Image */}
       <FadeInOnScroll>
         <img
-          src="https://via.placeholder.com/900x400"
+          src="../../public/images/pexels-airamdphoto-15940000.jpg"
           alt="Hero Banner"
           style={{ width: '100%', borderRadius: '8px', marginTop: '1.5rem' }}
         />
@@ -48,21 +48,21 @@ const Home = () => {
       <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}>
         <FadeInOnScroll>
           <img
-            src="https://via.placeholder.com/300"
+            src="../../public/images/pexels-kevin-ku-92347-577585.jpg"
             alt="Feature 1"
             style={{ width: '300px', height: '200px', borderRadius: '8px' }}
           />
         </FadeInOnScroll>
         <FadeInOnScroll>
           <img
-            src="https://via.placeholder.com/300"
+            src="../../public/images/pexels-kevin-ku-92347-577585.jpg"
             alt="Feature 2"
             style={{ width: '300px', height: '200px', borderRadius: '8px' }}
           />
         </FadeInOnScroll>
         <FadeInOnScroll>
           <img
-            src="https://via.placeholder.com/300"
+            src="../../public/images/pexels-kevin-ku-92347-577585.jpg"
             alt="Feature 3"
             style={{ width: '300px', height: '200px', borderRadius: '8px' }}
           />
@@ -113,7 +113,7 @@ const Home = () => {
     <h2>Discover More</h2>
     <p>Explore our latest features and improvements.</p>
     <img 
-      src="https://via.placeholder.com/800x400" 
+      src="public/images/pexels-kindelmedia-9029801.jpg" 
       alt="New Features"
       style={{ width: '100%', borderRadius: '8px', marginTop: '1rem' }}
     />

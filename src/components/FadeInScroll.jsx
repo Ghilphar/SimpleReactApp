@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 // import clsx from "clsx"; // Uncomment if you want to use clsx for cleaner class handling
 
-const FadeInOnScroll = ({ children, className = "", duration = 2000 }) => {
+const FadeInOnScroll = ({ children, className = "", duration = 1000 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const elementRef = useRef(null);
 

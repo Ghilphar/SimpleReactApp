@@ -241,5 +241,67 @@ We tell him to parse javascript with jsx enabled
 
 We set the react transform to use the automatic runtime. Recommended for react
 17+
+------
 
+
+You miss a part of the journey. Yesterday we installed the React APP into a docker container.
+For this we created a dockerfile.dev we choose alpine for his lighweight and node official container for the utilities installed in.
+
+Then we create a docker-compose file where we match the ports between the container and ou machine.
+Also we declarea volume so the changes on our folder is sync with the /app folder in the container. 
+However we face some challenges with the node_nmodules folder as is create some errors. 
+In order to prevent them we create an anonimous folder for it and we add it to the .dockerignore file.
+In that purpose that the container build the node_modules.
+
+->
+
+Now we relook on how we made the react app. As we could see on the App.jsx page we directly put the router.
+This create an issue if we want to put a login page on first on our app.
+To prevent this we are creating a layouts folder with a route folder in order to organize the app.
+
+----
+
+Let's focus on the login page:
+
+For this first simple step we are going to use localStorage:
+Key features of localStorage are :
+- Stores key-value pairs (like dictionary)
+- Data remains after page reloads or closing the browser
+- Can only store strings (others types must be converted to jsons)
+- limited to 5mb of storage per domain.
+
+So first whe nwe login we put a localStorage.setItem("isAuthenticated", "true")
+then we access it using localStorage.getItem("isAuthenticated")
+Then we can remove it using localStorage.removeItem("isAuthenticated")
+
+So as we can notice here we use 3 different functions in orter to set, get and remove
+As we also can appreciate this is a simple true false value.
+This is not acceptable for a realworld usage, so on our case later we should use something like a token.
+
+Let's create a todo list to start takings notes on what we will add.
+
+---
+
+We also change the AppRoutes.jsx
+Routes module help us define multiples routes for the app
+Route define an individual page inside Routes
+Navigage Redirects the user
+
+First we check if the user is isAuthenticated from the value of the localStorage
+and we variabilise it.
+If it is false the user is send to the login page.
+If they try to access ani other page they would be redirected to the login page aniway.
+
+If the user is authenticated now:
+They will et access to the HomePage (/) inside the MainLayout
+We also see the About page inside the MainLayout
+Also if the  user try to login he gets redirected to the HomePage
+
+We also used a ternary operator as:
+{Condition ? ( <if Something />) : <else Something />)};
+
+As we are ending this we notice we don't have a 404 pages we could correct this.
+So we add a NotFound page that redirect on it on ani not found route.
+
+We can now login and logout from our app.
 
