@@ -1,0 +1,8 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-ocre-200: #e6c199;
+  --color-ocre-500: #c2925b;
+  --color-ocre-600: #a87440;
+  --color-ocre-700: #8f5e29;
+}

@@ -305,3 +305,25 @@ So we add a NotFound page that redirect on it on ani not found route.
 
 We can now login and logout from our app.
 
+----
+
+so now we have some basics pages, we should take osme time to style them.
+This will allow us to install tailwind and also to being more proud of our work.
+We need to look for beauty in order to keep comitted.
+
+When we want to install tailwind.
+We where notified about 2 other packages that are
+postcss A CSS preprocessor that allows tailwind to work efficiently
+autoprefixer that adds missing vendors prefixes to ensure styles work across browsers
+
+However this is the old version of tailwind.
+We are now using tailwind CSS 4.0 and this changes the ways of working with it and vite.
+
+So we only add 2 dependencies that are tailwindcss and @tailwindcss/vite
+pnpm add -D tailwindcss @tailwindcss/vite
+
+We use the plugin of tailwindcss/vite on our vite.config.js in order to properly add tailwind to our project
+And we put tailwind on out global.css file
+Obiusly we import the global.css file into out App.jsx file
+
+We then use the @theme flag to define some colors that match our photo.
